@@ -14,6 +14,7 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger'
 
 // import Bananas from './components/banana'
+import OutsideText from './outside_text.js';
 
 import {
   Platform,
@@ -22,12 +23,8 @@ import {
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+
+
 
 export default class App extends Component <{}> {
   render() {
@@ -42,6 +39,7 @@ export default class App extends Component <{}> {
         <Text style={styles.bigblue}>Hello</Text>
         <Image source={pic} style={{width: 193, height: 110}}/>
         <View style={styles.blueSquare} />
+        <OutsideText/>
       </View>
     );
   }
@@ -75,4 +73,12 @@ const styles = StyleSheet.create({
   backgroundColor: 'steelblue'
   }
 
+});
+
+
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' +
+  'Cmd+D or shake for dev menu',
+  android: 'Double tap R on your keyboard to reload,\n' +
+  'Shake or press menu button for dev menu',
 });
